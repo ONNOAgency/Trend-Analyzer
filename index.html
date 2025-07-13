@@ -9,43 +9,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Minimalist Greyscale with Light Blue Accent -->
+    <!-- Chosen Palette: Earthy Creator -->
     <!-- Application Structure Plan: The application is designed as a single-page, scrollable dashboard with a sticky navigation. This non-linear structure allows a user (a digital creator) to freely explore different facets of the market intelligence—patterns, words, and platform strategies—based on their immediate interest. It prioritizes discovery and quick access to actionable insights over the linear format of the original report. Key interactions involve clicking on categories to dynamically update content and visualizations, providing immediate feedback and comparative context, which is ideal for strategic decision-making. -->
     <!-- Visualization & Content Choices: The report's qualitative data on market appeal is visualized using a radar chart. Report Info: 5 Pattern Categories. Goal: Compare market characteristics. Viz: Radar Chart (Chart.js) with axes for 'Evergreen Appeal', 'Seasonal Potential', 'Niche Focus', and 'Design Versatility'. Interaction: Clicking a pattern button updates the chart. Justification: This provides a unique visual 'fingerprint' for each pattern's strategic potential, turning abstract concepts into a comparable dashboard. For strategic advice, interactive cards and toggle sections are used to organize information, reducing cognitive load and allowing users to drill down into specific areas like Etsy vs. Canva strategies. This supports the goal of making complex information digestible and actionable. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; } /* Pure White */
-        /* Minimalist Greyscale with Light Blue Accent Palette */
-        :root {
-            --spot-blue: #4682B4; /* Darker Light Blue Spot Color */
-            --text-dark-grey: #4A4A5C; /* Dark Bluish Grey for text */
-            --bg-white: #FFFFFF; /* Pure White for sections */
-            --bg-light-grey: #F0F4F7; /* Very Light Bluish Grey for alternating sections */
-            --bg-header-footer: #E0E6EB; /* Slightly darker Light Bluish Grey for header/footer */
-            --border-light: #E8EEF2; /* Very light, almost white bluish grey for borders/grid */
-            --inactive-element-bg: #DDE5EB; /* Light Bluish Grey for inactive buttons */
-        }
-
+        body { font-family: 'Inter', sans-serif; background-color: #FDFBF8; }
         .chart-container { position: relative; width: 100%; max-width: 550px; margin-left: auto; margin-right: auto; height: 300px; max-height: 400px; }
         @media (min-width: 768px) { .chart-container { height: 350px; } }
-
-        .active-nav { color: var(--spot-blue); border-bottom: 2px solid var(--spot-blue); }
-        .inactive-nav { color: var(--text-dark-grey); border-bottom: 2px solid transparent; }
-
-        .active-btn { background-color: var(--spot-blue); color: var(--bg-white); }
-        .inactive-btn { background-color: var(--inactive-element-bg); color: var(--text-dark-grey); }
-
+        .active-nav { color: #8A5A44; border-bottom: 2px solid #8A5A44; }
+        .inactive-nav { color: #AFA093; border-bottom: 2px solid transparent; }
+        .active-btn { background-color: #8A5A44; color: #FDFBF8; }
+        .inactive-btn { background-color: #E7E0D9; color: #8A5A44; }
         .content-card { transition: all 0.3s ease-in-out; }
     </style>
 </head>
-<body class="text-[var(--text-dark-grey)]">
+<body class="text-[#5C3A2E]">
 
-    <header class="bg-[var(--bg-header-footer)] text-center py-12 px-4">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-[var(--spot-blue)] mb-3">Bold Pattern Text Design Trend Analyzer</h1>
-        <p class="max-w-3xl mx-auto text-lg text-[var(--text-dark-grey)]">An interactive guide to capitalizing on the top-selling pattern text trend on Etsy & Canva. Explore what to create and how to sell it.</p>
+    <header class="bg-[#E7E0D9] text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-[#8A5A44] mb-3">Bold Pattern Text Design Trend Analyzer</h1>
+        <p class="max-w-3xl mx-auto text-lg text-[#5C3A2E]">An interactive guide to capitalizing on the top-selling pattern text trend on Etsy & Canva. Explore what to create and how to sell it.</p>
     </header>
 
-    <nav id="navbar" class="sticky top-0 bg-[var(--bg-white)]/80 backdrop-blur-md z-50 shadow-sm">
+    <nav id="navbar" class="sticky top-0 bg-[#FDFBF8]/80 backdrop-blur-md z-50 shadow-sm">
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex justify-center items-center space-x-4 md:space-x-8 h-16">
                 <a href="#overview" class="nav-link text-sm md:text-base font-bold py-2 transition-colors duration-300">Trend Overview</a>
@@ -59,33 +45,33 @@
 
     <main class="max-w-5xl mx-auto p-4 md:p-8">
 
-        <section id="overview" class="mb-16 scroll-mt-20 bg-[var(--bg-white)] p-6 rounded-lg shadow-md">
-            <h2 class="text-3xl font-bold text-center mb-4 text-[var(--spot-blue)]">Why This Trend Matters</h2>
+        <section id="overview" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#8A5A44]">Why This Trend Matters</h2>
             <p class="text-center max-w-3xl mx-auto mb-8">
                 The "Bold Pattern Text" trend is a consistent top-seller, especially for print-on-demand products. The key to success is creating high-quality, seamless patterns that are versatile and easy for customers to use. Your ability to create color-changeable patterns with transparent backgrounds in Illustrator is a significant market advantage. This dashboard breaks down how to leverage that skill.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="bg-[var(--bg-white)] p-6 rounded-lg shadow-md border border-[var(--border-light)]">
-                    <span class="text-4xl font-bold text-[var(--spot-blue)]">5</span>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-[#E7E0D9]">
+                    <span class="text-4xl font-bold text-[#8A5A44]">5</span>
                     <p class="mt-2 font-semibold">Core Pattern Styles</p>
                 </div>
-                <div class="bg-[var(--bg-white)] p-6 rounded-lg shadow-md border border-[var(--border-light)]">
-                    <span class="text-4xl font-bold text-[var(--spot-blue)]">5</span>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-[#E7E0D9]">
+                    <span class="text-4xl font-bold text-[#8A5A44]">5</span>
                     <p class="mt-2 font-semibold">Winning Word Themes</p>
                 </div>
-                 <div class="bg-[var(--bg-white)] p-6 rounded-lg shadow-md border border-[var(--border-light)]">
-                    <span class="text-4xl font-bold text-[var(--spot-blue)]">SVG</span>
+                 <div class="bg-white p-6 rounded-lg shadow-md border border-[#E7E0D9]">
+                    <span class="text-4xl font-bold text-[#8A5A44]">SVG</span>
                     <p class="mt-2 font-semibold">Is the Optimal Format</p>
                 </div>
-                <div class="bg-[var(--bg-white)] p-6 rounded-lg shadow-md border border-[var(--border-light)]">
-                    <span class="text-xl font-bold text-[var(--spot-blue)]">Bundling</span>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-[#E7E0D9]">
+                    <span class="text-xl font-bold text-[#8A5A44]">Bundling</span>
                     <p class="mt-2 font-semibold">Drives Etsy Sales</p>
                 </div>
             </div>
         </section>
 
-        <section id="explorer" class="mb-16 scroll-mt-20 bg-[var(--bg-light-grey)] p-6 rounded-lg shadow-md">
-            <h2 class="text-3xl font-bold text-center mb-2 text-[var(--spot-blue)]">Opportunity Explorer</h2>
+        <section id="explorer" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#8A5A44]">Opportunity Explorer</h2>
             <p class="text-center max-w-3xl mx-auto mb-8">
                 Interactively explore the most profitable pattern styles and word categories. Click a pattern button to see its market profile on the radar chart and discover relevant keywords.
             </p>
@@ -99,8 +85,8 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div class="bg-[var(--bg-white)] p-6 rounded-lg shadow-lg border border-[var(--border-light)] content-card">
-                    <h3 id="pattern-title" class="text-2xl font-bold mb-4 text-[var(--spot-blue)]"></h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-[#E7E0D9] content-card">
+                    <h3 id="pattern-title" class="text-2xl font-bold mb-4 text-[#8A5A44]"></h3>
                     <p id="pattern-desc" class="mb-4"></p>
                     <h4 class="font-bold mb-2">Top Keywords:</h4>
                     <div id="pattern-keywords" class="flex flex-wrap gap-2"></div>
@@ -111,14 +97,14 @@
             </div>
         </section>
 
-        <section id="strategy" class="mb-16 scroll-mt-20 bg-[var(--bg-white)] p-6 rounded-lg shadow-md">
-            <h2 class="text-3xl font-bold text-center mb-2 text-[var(--spot-blue)]">Platform Strategy Guide</h2>
+        <section id="strategy" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#8A5A44]">Platform Strategy Guide</h2>
             <p class="text-center max-w-3xl mx-auto mb-8">
                 Success requires different strategies for Etsy and Canva. Use this guide to understand how to package your products and monetize your skills on each platform.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-[var(--bg-white)] p-6 rounded-lg shadow-lg border border-[var(--border-light)]">
-                    <h3 class="text-2xl font-bold mb-4 text-[var(--spot-blue)]">🚀 Etsy: Maximize Value with Bundles</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-[#E7E0D9]">
+                    <h3 class="text-2xl font-bold mb-4 text-[#8A5A44]">🚀 Etsy: Maximize Value with Bundles</h3>
                     <p class="mb-4">On Etsy, buyers seek comprehensive solutions. Bundling increases perceived value and average order size. Your goal is to provide a complete toolkit for the customer's project.</p>
                     <ul class="space-y-3 list-disc list-inside">
                         <li><strong>Alphabet & Number Bundles:</strong> Offer a full A-Z set in a single pattern style. This is a top-selling format for crafters.</li>
@@ -127,28 +113,28 @@
                         <li><strong>Use Great Mockups:</strong> Visually showcase how the patterns look on actual products like t-shirts and mugs to drive conversions.</li>
                     </ul>
                 </div>
-                <div class="bg-[var(--bg-white)] p-6 rounded-lg shadow-lg border border-[var(--border-light)]">
-                     <h3 class="text-2xl font-bold mb-4 text-[var(--spot-blue)]">💎 Canva: Monetize as an Element Creator</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-[#E7E0D9]">
+                     <h3 class="text-2xl font-bold mb-4 text-[#8A5A44]">💎 Canva: Monetize as an Element Creator</h3>
                      <p class="mb-4">Canva offers a passive income stream by selling individual elements to millions of users. Quality and technical format are paramount here.</p>
                      <ul class="space-y-3 list-disc list-inside">
                         <li><strong>SVG is King:</strong> Submit your patterns as SVG files. This is critical as it allows users to change colors directly within Canva, a huge selling point.</li>
                         <li><strong>Originality & Quality:</strong> Your designs must be unique and high-quality to be accepted and to stand out in the marketplace.</li>
                         <li><strong>Master Keywords:</strong> Use descriptive keywords (e.g., 'seamless pattern', 'text fill', 'editable floral') to ensure your elements are discoverable in Canva's library.</li>
-                        <li><strong>Understand Licensing:</b> You retain ownership, but Canva users can use your premium graphics in designs for resale. You cannot sell standalone, unmodified assets.</li>
+                        <li><strong>Understand Licensing:</strong> You retain ownership, but Canva users can use your premium graphics in designs for resale. You cannot sell standalone, unmodified assets.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="creative-assistant" class="mb-16 scroll-mt-20 bg-[var(--bg-light-grey)] p-6 rounded-lg shadow-md">
-            <h2 class="text-3xl font-bold text-center mb-2 text-[var(--spot-blue)]">Creative Assistant ✨</h2>
+        <section id="creative-assistant" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#8A5A44]">Creative Assistant ✨</h2>
             <p class="text-center max-w-3xl mx-auto mb-8">
-                Leverage AI to brainstorm new design ideas, craft compelling Etsy listing titles, social media captions, or generate effective Canva keywords. You can also ask the AI directly about market trends.
+                Leverage AI to brainstorm new design ideas, craft compelling Etsy listing titles, or generate effective Canva keywords.
             </p>
-            <div class="bg-[var(--bg-white)] p-6 rounded-lg shadow-lg border border-[var(--border-light)] max-w-3xl mx-auto">
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-[#E7E0D9] max-w-3xl mx-auto">
                 <div class="mb-4">
                     <label for="pattern-select" class="block text-sm font-medium text-gray-700 mb-1">Select Pattern Type:</label>
-                    <select id="pattern-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[var(--spot-blue)] focus:border-[var(--spot-blue)] sm:text-sm rounded-md bg-[var(--bg-white)]">
+                    <select id="pattern-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#8A5A44] focus:border-[#8A5A44] sm:text-sm rounded-md bg-[#FDFBF8]">
                         <option value="floral">🌸 Floral</option>
                         <option value="retro">🕺 Retro & Groovy</option>
                         <option value="animal">🐾 Animal Print</option>
@@ -158,7 +144,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="theme-select" class="block text-sm font-medium text-gray-700 mb-1">Select Word Theme:</label>
-                    <select id="theme-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[var(--spot-blue)] focus:border-[var(--spot-blue)] sm:text-sm rounded-md bg-[var(--bg-white)]">
+                    <select id="theme-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#8A5A44] focus:border-[#8A5A44] sm:text-sm rounded-md bg-[#FDFBF8]">
                         <option value="mama-life">👩‍👧 Mama Life</option>
                         <option value="funny-sarcastic">😂 Funny & Sarcastic</option>
                         <option value="seasonal-holiday">🎄 Seasonal & Holiday</option>
@@ -173,52 +159,36 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">Choose Output Type:</label>
                     <div class="mt-1 flex flex-wrap gap-3">
                         <label class="inline-flex items-center">
-                            <input type="radio" name="output-type" value="design-ideas" class="form-radio text-[var(--spot-blue)] focus:ring-[var(--spot-blue)]" checked>
+                            <input type="radio" name="output-type" value="design-ideas" class="form-radio text-[#8A5A44] focus:ring-[#8A5A44]" checked>
                             <span class="ml-2 text-sm text-gray-700">Design Ideas</span>
                         </label>
                         <label class="inline-flex items-center">
-                            <input type="radio" name="output-type" value="etsy-title" class="form-radio text-[var(--spot-blue)] focus:ring-[var(--spot-blue)]">
+                            <input type="radio" name="output-type" value="etsy-title" class="form-radio text-[#8A5A44] focus:ring-[#8A5A44]">
                             <span class="ml-2 text-sm text-gray-700">Etsy Listing Title</span>
                         </label>
                         <label class="inline-flex items-center">
-                            <input type="radio" name="output-type" value="canva-keywords" class="form-radio text-[var(--spot-blue)] focus:ring-[var(--spot-blue)]">
+                            <input type="radio" name="output-type" value="canva-keywords" class="form-radio text-[#8A5A44] focus:ring-[#8A5A44]">
                             <span class="ml-2 text-sm text-gray-700">Canva Keywords</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="output-type" value="etsy-description" class="form-radio text-[var(--spot-blue)] focus:ring-[var(--spot-blue)]">
-                            <span class="ml-2 text-sm text-gray-700">Etsy Product Description</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="output-type" value="social-media-post" class="form-radio text-[var(--spot-blue)] focus:ring-[var(--spot-blue)]">
-                            <span class="ml-2 text-sm text-gray-700">Social Media Caption</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="radio" name="output-type" value="trend-expert-question" class="form-radio text-[var(--spot-blue)] focus:ring-[var(--spot-blue)]">
-                            <span class="ml-2 text-sm text-gray-700">Ask the Trend Expert</span>
                         </label>
                     </div>
                 </div>
-                <div id="trend-question-input-container" class="mb-4 hidden">
-                    <label for="trend-question" class="block text-sm font-medium text-gray-700 mb-1">Your Question:</label>
-                    <textarea id="trend-question" rows="3" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-[var(--spot-blue)] focus:border-[var(--spot-blue)] sm:text-sm bg-[var(--bg-white)]" placeholder="e.g., What are popular seasonal patterns for winter?"></textarea>
-                </div>
-                <button id="generate-ideas-btn" class="w-full bg-[var(--spot-blue)] text-white py-2 px-4 rounded-md hover:bg-[var(--inactive-element-bg)] transition-colors duration-300 font-semibold flex items-center justify-center">
+                <button id="generate-ideas-btn" class="w-full bg-[#8A5A44] text-white py-2 px-4 rounded-md hover:bg-[#AFA093] transition-colors duration-300 font-semibold flex items-center justify-center">
                     Generate Ideas ✨
                     <span id="loading-spinner" class="hidden ml-2 w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
                 </button>
                 <div class="mt-6">
                     <label for="generated-output" class="block text-sm font-medium text-gray-700 mb-1">Generated Output:</label>
-                    <textarea id="generated-output" rows="8" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-[var(--spot-blue)] focus:border-[var(--spot-blue)] sm:text-sm bg-[var(--bg-white)]" readonly placeholder="Your generated ideas will appear here..."></textarea>
+                    <textarea id="generated-output" rows="8" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-[#8A5A44] focus:border-[#8A5A44] sm:text-sm bg-[#FDFBF8]" readonly placeholder="Your generated ideas will appear here..."></textarea>
                 </div>
             </div>
         </section>
 
-        <section id="checklist" class="scroll-mt-20 bg-[var(--bg-light-grey)] p-6 rounded-lg shadow-md">
-            <h2 class="text-3xl font-bold text-center mb-2 text-[var(--spot-blue)]">Your Action Checklist</h2>
+        <section id="checklist" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#8A5A44]">Your Action Checklist</h2>
             <p class="text-center max-w-3xl mx-auto mb-8">
                 Use this checklist to ensure your digital products are optimized for success based on the key findings of this report.
             </p>
-            <div class="bg-[var(--bg-white)] max-w-2xl mx-auto p-6 rounded-lg shadow-lg border border-[var(--border-light)]">
+            <div class="bg-white max-w-2xl mx-auto p-6 rounded-lg shadow-lg border border-[#E7E0D9]">
                 <ul id="action-list" class="space-y-4">
                 </ul>
             </div>
@@ -226,8 +196,8 @@
 
     </main>
 
-    <footer class="text-center py-8 mt-12 bg-[var(--bg-header-footer)]">
-        <p class="text-[var(--text-dark-grey)]">Interactive Report Generated from Source Analysis</p>
+    <footer class="text-center py-8 mt-12 bg-[#E7E0D9]">
+        <p class="text-[#5C3A2E]">Interactive Report Generated from Source Analysis</p>
     </footer>
 
 <script>
@@ -328,15 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateIdeasBtn = document.getElementById('generate-ideas-btn');
     const loadingSpinner = document.getElementById('loading-spinner');
     const generatedOutputEl = document.getElementById('generated-output');
-    const trendQuestionInputContainer = document.getElementById('trend-question-input-container');
-    const trendQuestionEl = document.getElementById('trend-question');
-
 
     function init() {
         updatePatternView(currentState.activePattern);
         renderChecklist();
         setupNavObserver();
-        setupOutputTypeListener();
     }
 
     function updatePatternView(patternKey) {
@@ -349,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
         patternKeywordsEl.innerHTML = '';
         data.keywords.forEach(keyword => {
             const span = document.createElement('span');
-            span.className = 'bg-[var(--inactive-element-bg)] text-[var(--text-dark-grey)] text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full';
+            span.className = 'bg-[#E7E0D9] text-[#8A5A44] text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full';
             span.textContent = keyword;
             patternKeywordsEl.appendChild(span);
         });
@@ -373,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             li.className = "flex items-center cursor-pointer";
             li.innerHTML = `
-                <div class="check-box w-5 h-5 mr-4 border-2 border-[var(--border-light)] rounded flex items-center justify-center transition-all duration-300">
+                <div class="check-box w-5 h-5 mr-4 border-2 border-[#AFA093] rounded flex items-center justify-center transition-all duration-300">
                     <span class="check-mark text-white text-lg hidden">✓</span>
                 </div>
                 <span class="flex-1">${itemText}</span>
@@ -382,8 +348,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const box = li.querySelector('.check-box');
                 const mark = li.querySelector('.check-mark');
                 const text = li.querySelector('span:last-child');
-                box.classList.toggle('bg-[var(--spot-blue)]');
-                box.classList.toggle('border-[var(--spot-blue)]');
+                box.classList.toggle('bg-[#8A5A44]');
+                box.classList.toggle('border-[#AFA093]');
                 mark.classList.toggle('hidden');
                 text.classList.toggle('line-through');
                 text.classList.toggle('text-gray-400');
@@ -404,12 +370,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 datasets: [{
                     label: label,
                     data: data,
-                    backgroundColor: 'rgba(70, 130, 180, 0.2)', /* Darker Light Blue with opacity */
-                    borderColor: 'rgba(70, 130, 180, 1)', /* Darker Light Blue */
-                    pointBackgroundColor: 'rgba(70, 130, 180, 1)', /* Darker Light Blue */
+                    backgroundColor: 'rgba(138, 90, 68, 0.2)',
+                    borderColor: 'rgba(138, 90, 68, 1)',
+                    pointBackgroundColor: 'rgba(138, 90, 68, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(70, 130, 180, 1)'
+                    pointHoverBorderColor: 'rgba(138, 90, 68, 1)'
                 }]
             },
             options: {
@@ -417,15 +383,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 maintainAspectRatio: false,
                 scales: {
                     r: {
-                        angleLines: { color: 'var(--border-light)' },
-                        grid: { color: 'var(--border-light)' },
+                        angleLines: { color: '#E7E0D9' },
+                        grid: { color: '#E7E0D9' },
                         pointLabels: { 
                             font: { size: 12, weight: 'bold' },
-                             color: 'var(--text-dark-grey)'
+                             color: '#5C3A2E'
                         },
                         ticks: {
-                            backdropColor: 'var(--bg-white)',
-                            color: 'var(--text-dark-grey)'
+                            backdropColor: '#FDFBF8',
+                            color: '#AFA093'
                         },
                         suggestedMin: 0,
                         suggestedMax: 10
@@ -464,22 +430,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function setupOutputTypeListener() {
-        outputTypeRadios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                if (radio.value === 'trend-expert-question') {
-                    trendQuestionInputContainer.classList.remove('hidden');
-                    patternSelectEl.disabled = true;
-                    themeSelectEl.disabled = true;
-                } else {
-                    trendQuestionInputContainer.classList.add('hidden');
-                    patternSelectEl.disabled = false;
-                    themeSelectEl.disabled = false;
-                }
-            });
-        });
-    }
-
     patternButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             updatePatternView(e.target.dataset.pattern);
@@ -497,52 +447,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        if (!selectedOutputType) {
-             generatedOutputEl.value = "Please select an output type.";
-             return;
-        }
-
-        if (selectedOutputType !== 'trend-expert-question' && (!selectedPattern || !selectedTheme)) {
-            generatedOutputEl.value = "Please select a pattern and theme.";
+        if (!selectedPattern || !selectedTheme || !selectedOutputType) {
+            generatedOutputEl.value = "Please select a pattern, theme, and output type.";
             return;
         }
-
-        if (selectedOutputType === 'trend-expert-question' && !trendQuestionEl.value.trim()) {
-            generatedOutputEl.value = "Please enter your question for the Trend Expert.";
-            return;
-        }
-
 
         loadingSpinner.classList.remove('hidden');
         generateIdeasBtn.disabled = true;
         generatedOutputEl.value = "Generating ideas, please wait...";
 
-        const patternDescription = patternData[selectedPattern]?.title.replace('🌸 ', '').replace('🕺 ', '').replace('🐾 ', '').replace('✏️ ', '').replace('💠 ', '') || '';
-        const themeDescription = wordThemes[selectedTheme]?.description || '';
-        const themeExamples = wordThemes[selectedTheme]?.examples.join(', ') || '';
+        const patternDescription = patternData[selectedPattern].title.replace('🌸 ', '').replace('🕺 ', '').replace('🐾 ', '').replace('✏️ ', '').replace('💠 ', '');
+        const themeDescription = wordThemes[selectedTheme].description;
+        const themeExamples = wordThemes[selectedTheme].examples.join(', ');
 
-        let prompt = `As an Etsy and Canva trend expert, `;
+        let prompt = `As an Etsy and Canva trend expert, generate `;
 
         if (selectedOutputType === 'design-ideas') {
-            prompt += `generate 3-5 unique and creative text phrases or design concepts for a digital product featuring a "${patternDescription}" pattern combined with a "${themeDescription}" theme. Example themes: ${themeExamples}.`;
+            prompt += `3-5 unique and creative text phrases or design concepts for a digital product featuring a "${patternDescription}" pattern combined with a "${themeDescription}" theme. Example themes: ${themeExamples}.`;
         } else if (selectedOutputType === 'etsy-title') {
-            prompt += `generate 3 catchy and keyword-rich Etsy listing titles for a digital product featuring a "${patternDescription}" pattern combined with a "${themeDescription}" theme. Example themes: ${themeExamples}.`;
+            prompt += `3 catchy and keyword-rich Etsy listing titles for a digital product featuring a "${patternDescription}" pattern combined with a "${themeDescription}" theme. Example themes: ${themeExamples}.`;
         } else if (selectedOutputType === 'canva-keywords') {
-            prompt += `generate 10-15 relevant and searchable Canva element keywords for a digital product featuring a "${patternDescription}" pattern combined with a "${themeDescription}" theme. Example themes: ${themeExamples}. Provide them as a comma-separated list.`;
-        } else if (selectedOutputType === 'etsy-description') {
-            prompt += `write a detailed and engaging Etsy product description (approx. 150-200 words) for a digital product featuring a "${patternDescription}" pattern combined with a "${themeDescription}" theme. Highlight its versatility for print-on-demand, color-changeability, and transparent background. Include relevant keywords.`;
-        } else if (selectedOutputType === 'social-media-post') {
-            prompt += `create 3 short (2-3 sentences each) social media captions for Instagram/Facebook to promote a new digital product featuring a "${patternDescription}" pattern combined with a "${themeDescription}" theme. Include relevant emojis and a call to action.`;
-        } else if (selectedOutputType === 'trend-expert-question') {
-            const userQuestion = trendQuestionEl.value.trim();
-            prompt = `As an Etsy and Canva trend expert, answer the following question regarding digital product trends, especially for seamless patterns and bold text designs: "${userQuestion}". Provide a concise and actionable answer.`;
+            prompt += `10-15 relevant and searchable Canva element keywords for a digital product featuring a "${patternDescription}" pattern combined with a "${themeDescription}" theme. Example themes: ${themeExamples}. Provide them as a comma-separated list.`;
         }
 
         try {
+            // IMPORTANT: Replace "YOUR_GEMINI_API_KEY_HERE" with your actual Gemini API key.
+            // You can get one from Google AI Studio: https://aistudio.google.com/app/apikey
+            const apiKey = "AIzaSyDBpPsNL2OWOukVk6YoVmEHibmGsp_I67M"; 
+            
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
             const payload = { contents: chatHistory };
-            const apiKey = "";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
             const response = await fetch(apiUrl, {
                 method: 'POST',
@@ -561,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error("Error calling Gemini API:", error);
-            generatedOutputEl.value = "An error occurred while connecting to the AI. Please try again.";
+            generatedOutputEl.value = "An error occurred while connecting to the AI. Please try again. Check your API key and network connection.";
         } finally {
             loadingSpinner.classList.add('hidden');
             generateIdeasBtn.disabled = false;
