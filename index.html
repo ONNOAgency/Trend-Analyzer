@@ -508,15 +508,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // IMPORTANT: Replace "YOUR_GEMINI_API_KEY_HERE" with your actual Gemini API key.
-            // You can get one from Google AI Studio: https://aistudio.google.com/app/apikey
-            const apiKey = ""; 
+            // IMPORTANT: Replace "YOUR_CLOUD_FUNCTION_URL" with the actual URL of your deployed Google Cloud Function.
+            // You will get this URL after deploying the function in the next step.
+            const cloudFunctionUrl = "YOUR_CLOUD_FUNCTION_URL"; 
             
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
             const payload = { contents: chatHistory };
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-            const response = await fetch(apiUrl, {
+            
+            const response = await fetch(cloudFunctionUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -533,8 +533,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 generatedOutputEl.innerHTML = "Could not generate ideas. Please try again.";
             }
         } catch (error) {
-            console.error("Error calling Gemini API:", error);
-            generatedOutputEl.innerHTML = "An error occurred while connecting to the AI. Please try again. Check your API key and network connection.";
+            console.error("Error calling Cloud Function:", error);
+            generatedOutputEl.innerHTML = "An error occurred while connecting to the AI via the Cloud Function. Please ensure the function is deployed and the URL is correct.";
         } finally {
             loadingSpinner.classList.add('hidden');
             generateIdeasBtn.disabled = false;
